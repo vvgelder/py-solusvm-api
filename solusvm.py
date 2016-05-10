@@ -10,6 +10,10 @@
     @updated    4/29/15
 """
 import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 
 class SolusVM:
     def __init__(self, url, api_id, api_key):
@@ -40,7 +44,7 @@ class SolusVM:
                 'key':self.key
         })
 
-        response = requests.get('https://'+self.url+':5656/api/admin/command.php', params=kwargs, timeout=2)
+        response = requests.get('https://'+self.url+':5656/api/admin/command.php', verify=False, params=kwargs, timeout=10)
         return response.json()
 
     def listVirtualServers(self, nodeid):
