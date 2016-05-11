@@ -16,8 +16,7 @@ setup(name='py-solusvm-api',
       url='http://ixlhosting.nl/',
       license='Apache Software License',
       install_requires=['setuptools'],
-      package_dir={ '': 'lib' },
-      packages=find_packages('lib'),
+      packages=['solusvm.py']
       package_data={
          '': [],
       },
