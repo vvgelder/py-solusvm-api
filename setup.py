@@ -14,12 +14,8 @@ setup(name='py-solusvm-api',
       author='Vincent van Gelder',
       author_email='vincent@ixlhosting.nl',
       url='http://ixlhosting.nl/',
-      license='Apache Software License',
-      install_requires=['setuptools'],
-      packages=['solusvm.py']
-      package_data={
-         '': [],
-      },
+      install_requires=['setuptools','requests'],
+      py_modules=['solusvm'],
       classifiers=[
           'Development Status :: 5 - Production/Stable',
           'Environment :: Console',
@@ -35,6 +31,4 @@ setup(name='py-solusvm-api',
           'Topic :: System :: Systems Administration',
           'Topic :: Utilities',
       ],
-      scripts=[],
-      data_files=[],
 )
